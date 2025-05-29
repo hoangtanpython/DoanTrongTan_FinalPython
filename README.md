@@ -63,11 +63,17 @@ Nếu gặp lỗi import trong IDE (như VS Code), chọn đúng Python interpre
 Cấu trúc dự án
 Website_linhkien_maytinh/
 ├── database.py          # Quản lý kết nối và truy vấn MySQL
+
 ├── linhkien_manager.py  # Tab Danh sách linh kiện
+
 ├── timkiem_manager.py   # Tab Tìm kiếm linh kiện
+
 ├── banhang_manager.py   # Tab Bán hàng
+
 ├── thongke_manager.py   # Tab Thống kê
+
 ├── main.py              # File chính, tích hợp các tab
+
 └── README.md            # Tài liệu hướng dẫn
 
 Hướng phát triển
