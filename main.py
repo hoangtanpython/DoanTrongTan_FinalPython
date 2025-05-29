@@ -11,7 +11,7 @@ class App:
     def __init__(self, root):
         self.root = root
         self.root.title("Quản lý linh kiện máy tính")
-        self.root.geometry("1000x600")  # Tăng kích thước cửa sổ
+        self.root.geometry("1024x1024")  # Tăng kích thước cửa sổ
         self.root.configure(bg="#f0f0f0")  # Màu nền nhạt cho cửa sổ chính
 
         # Áp dụng theme cho ttk
@@ -28,16 +28,9 @@ class App:
 
         file_menu = tk.Menu(menubar, tearoff=0, bg="#4a90e2", fg="white")
         menubar.add_cascade(label="File", menu=file_menu)
-        file_menu.add_command(label="Làm mới dữ liệu", command=self.linh_kien_manager.fetch_data)
-        file_menu.add_separator()
+        # file_menu.add_separator()
         file_menu.add_command(label="Thoát", command=self.root.quit)
-
-        func_menu = tk.Menu(menubar, tearoff=0, bg="#4a90e2", fg="white")
-        menubar.add_cascade(label="Chức năng", menu=func_menu)
-        func_menu.add_command(label="Thêm linh kiện", command=self.linh_kien_manager.add_linh_kien)
-        func_menu.add_command(label="Cập nhật linh kiện", command=self.linh_kien_manager.update_linh_kien)
-        func_menu.add_command(label="Xóa linh kiện", command=self.linh_kien_manager.delete_linh_kien)
-
+        
         help_menu = tk.Menu(menubar, tearoff=0, bg="#4a90e2", fg="white")
         menubar.add_cascade(label="Trợ giúp", menu=help_menu)
         help_menu.add_command(label="Hướng dẫn", command=lambda: messagebox.showinfo("Hướng dẫn", "Hãy chọn một tab để quản lý linh kiện!"))

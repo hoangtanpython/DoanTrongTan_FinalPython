@@ -28,30 +28,36 @@ class LinhKienManager:
         # Đảm bảo gán sự kiện TreeviewSelect
         self.tree.bind("<<TreeviewSelect>>", self.on_tree_select)
 
-        self.frame_form = tk.Frame(self.frame, bg="#ffffff", padx=10, pady=10)
-        self.frame_form.pack(pady=10)
+        # Frame cho form nhập liệu
+        self.form_frame = tk.Frame(self.frame, bg="#ffffff", padx=10, pady=10)
+        self.form_frame.pack(side=tk.LEFT, padx=10, pady=10)
 
-        font = ("Arial", 10)
-        tk.Label(self.frame_form, text="Tên", font=font, bg="#ffffff", fg="#333333").grid(row=0, column=0, padx=5, pady=5)
-        self.entry_ten = tk.Entry(self.frame_form, font=font, bg="#f0f0f0")
+        # Các ô nhập liệu xếp dọc
+        font = ("Arial", 15)
+        tk.Label(self.form_frame, text="Tên", font=font, bg="#ffffff", fg="#333333").grid(row=0, column=0, padx=5, pady=5, sticky="e")
+        self.entry_ten = tk.Entry(self.form_frame, font=font, bg="#f0f0f0", width=50)
         self.entry_ten.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(self.frame_form, text="Loại", font=font, bg="#ffffff", fg="#333333").grid(row=0, column=2, padx=5, pady=5)
-        self.entry_loai = tk.Entry(self.frame_form, font=font, bg="#f0f0f0")
-        self.entry_loai.grid(row=0, column=3, padx=5, pady=5)
+        tk.Label(self.form_frame, text="Loại", font=font, bg="#ffffff", fg="#333333").grid(row=1, column=0, padx=5, pady=5, sticky="e")
+        self.entry_loai = tk.Entry(self.form_frame, font=font, bg="#f0f0f0", width=50)
+        self.entry_loai.grid(row=1, column=1, padx=5, pady=5)
 
-        tk.Label(self.frame_form, text="Số lượng", font=font, bg="#ffffff", fg="#333333").grid(row=1, column=0, padx=5, pady=5)
-        self.entry_soluong = tk.Entry(self.frame_form, font=font, bg="#f0f0f0")
-        self.entry_soluong.grid(row=1, column=1, padx=5, pady=5)
+        tk.Label(self.form_frame, text="Số lượng", font=font, bg="#ffffff", fg="#333333").grid(row=2, column=0, padx=5, pady=5, sticky="e")
+        self.entry_soluong = tk.Entry(self.form_frame, font=font, bg="#f0f0f0", width=50)
+        self.entry_soluong.grid(row=2, column=1, padx=5, pady=5)
 
-        tk.Label(self.frame_form, text="Giá", font=font, bg="#ffffff", fg="#333333").grid(row=1, column=2, padx=5, pady=5)
-        self.entry_gia = tk.Entry(self.frame_form, font=font, bg="#f0f0f0")
-        self.entry_gia.grid(row=1, column=3, padx=5, pady=5)
+        tk.Label(self.form_frame, text="Giá", font=font, bg="#ffffff", fg="#333333").grid(row=3, column=0, padx=5, pady=5, sticky="e")
+        self.entry_gia = tk.Entry(self.form_frame, font=font, bg="#f0f0f0", width=50)
+        self.entry_gia.grid(row=3, column=1, padx=5, pady=5)
 
-        tk.Button(self.frame, text="Thêm linh kiện", command=self.add_linh_kien, bg="#4a90e2", fg="white", font=font, padx=10, pady=5).pack(pady=5)
-        tk.Button(self.frame, text="Cập nhật linh kiện", command=self.update_linh_kien, bg="#50c878", fg="white", font=font, padx=10, pady=5).pack(pady=5)
-        tk.Button(self.frame, text="Xóa linh kiện", command=self.delete_linh_kien, bg="#e94e77", fg="white", font=font, padx=10, pady=5).pack(pady=5)
-        tk.Button(self.frame, text="Làm mới dữ liệu", command=self.fetch_data, bg="#f5a623", fg="white", font=font, padx=10, pady=5).pack(pady=5)
+        # Frame cho các nút chức năng
+        self.button_frame = tk.Frame(self.frame, bg="#ffffff")
+        self.button_frame.pack(pady=10)
+
+        # Các nút chức năng với chiều dài đều nhau
+        tk.Button(self.button_frame, text="Thêm linh kiện", command=self.add_linh_kien, bg="#4a90e2", fg="white", font=font, width=20).pack(pady=5)
+        tk.Button(self.button_frame, text="Cập nhật linh kiện", command=self.update_linh_kien, bg="#50c878", fg="white", font=font, width=20).pack(pady=5)
+        tk.Button(self.button_frame, text="Xóa linh kiện", command=self.delete_linh_kien, bg="#e94e77", fg="white", font=font, width=20).pack(pady=5)
 
     def fetch_data(self):
         for row in self.tree.get_children():

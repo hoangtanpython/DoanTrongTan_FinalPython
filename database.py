@@ -127,15 +127,3 @@ class Database:
         conn.close()
         return result
 
-    # Thêm phương thức lấy lịch sử nhập hàng
-    def get_lich_su_nhap_hang(self):
-        conn = self.get_connection()
-        cursor = conn.cursor()
-        cursor.execute("""
-            SELECT nh.id, lk.ten, nh.so_luong, nh.gia, nh.ngay_nhap, lk.loai
-            FROM nhap_hang nh
-            JOIN linh_kien lk ON nh.id_linh_kien = lk.id
-        """)
-        result = cursor.fetchall()
-        conn.close()
-        return result
