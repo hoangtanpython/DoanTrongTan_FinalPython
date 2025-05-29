@@ -7,7 +7,7 @@ Tìm kiếm linh kiện: Tìm kiếm linh kiện theo tên hoặc loại.
 Bán hàng: Chọn linh kiện, thêm vào giỏ hàng, và xác nhận bán.
 Thống kê: Hiển thị biểu đồ số lượng linh kiện và doanh thu theo loại, cùng lịch sử bán hàng.
 
-Chương trình được thiết kế với giao diện thân thiện, màu sắc đồng bộ (trắng #ffffff, xanh dương #4a90e2, xanh lá #50c878), và sử dụng font Arial.
+Chương trình được thiết kế với giao diện thân thiện, màu sắc đồng bộ và sử dụng font Arial.
 Yêu cầu
 
 Hệ điều hành: Windows (hoặc macOS/Linux, nhưng chưa được kiểm tra).
@@ -41,41 +41,13 @@ Cập nhật thông tin kết nối MySQL trong file database.py:self.conn = mys
     database="linhkien_maytinh"
 )
 
-
-
 3. Cài đặt thư viện Python
 
 Mở terminal (PowerShell hoặc Command Prompt) trong thư mục dự án:cd D:\HK8\PYTHON_PROGRAMMING\Website_linhkien_maytinh
 
-
-Cài các thư viện:pip install mysql-connector-python
+Cài các thư viện
+pip install mysql-connector-python
 pip install matplotlib
-
-
-
-4. (Tùy chọn) Tạo môi trường ảo
-
-Tạo môi trường ảo để cô lập thư viện:python -m venv venv
-
-
-Kích hoạt môi trường ảo:venv\Scripts\activate
-
-
-Cài lại thư viện trong môi trường ảo (như bước 3).
-
-Sử dụng
-
-Chạy chương trình:
-Mở terminal trong thư mục dự án:cd D:\HK8\PYTHON_PROGRAMMING\Website_linhkien_maytinh
-
-
-Nếu dùng môi trường ảo, kích hoạt:venv\Scripts\activate
-
-
-Chạy file chính:python main.py
-
-
-
 
 Giao diện:
 Chương trình có 4 tab chính:
@@ -84,14 +56,9 @@ Tìm kiếm linh kiện: Tìm kiếm theo tên hoặc loại.
 Bán hàng: Chọn linh kiện, thêm vào giỏ, xác nhận bán.
 Thống kê: Xem biểu đồ số lượng và doanh thu, lịch sử bán hàng.
 
-
-
-
 Lưu ý:
 Đảm bảo MySQL đang chạy trước khi mở chương trình.
 Nếu gặp lỗi import trong IDE (như VS Code), chọn đúng Python interpreter (3.12.10) và cài lại thư viện.
-
-
 
 Cấu trúc dự án
 Website_linhkien_maytinh/
@@ -103,11 +70,6 @@ Website_linhkien_maytinh/
 ├── main.py              # File chính, tích hợp các tab
 └── README.md            # Tài liệu hướng dẫn
 
-Ghi nhận vấn đề
-
-Đã gặp lỗi No pyvenv.cfg file khi tạo môi trường ảo do xóa nhầm venv. Khắc phục bằng cách xóa và tạo lại venv hoặc chạy trực tiếp với Python toàn cục.
-Một số dòng import (matplotlib, mysql-connector-python) bị đỏ trong VS Code do chọn sai interpreter, nhưng chương trình vẫn chạy bình thường sau khi cài thư viện.
-
 Hướng phát triển
 
 Thêm chức năng xuất hóa đơn sau khi bán hàng.
@@ -116,7 +78,7 @@ Tối ưu truy vấn MySQL để tăng hiệu suất.
 
 Tác giả
 
-Họ tên: [Tên của bạn]
-MSSV: [Mã số sinh viên của bạn]
+Họ tên: Đoàn Trọng Tấn
+MSSV: 21IT106
 Dự án thực hiện trong môn học: Lập trình Python, Học kỳ 8, Năm 2025.
 
