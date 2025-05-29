@@ -80,8 +80,11 @@ Website_linhkien_maytinh/
 Hướng phát triển
 
 Thêm chức năng xuất hóa đơn sau khi bán hàng.
+
 Thêm thanh cuộn cho bảng dữ liệu lớn.
+
 Tối ưu truy vấn MySQL để tăng hiệu suất.
+
 
 Tác giả
 
